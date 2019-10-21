@@ -15,7 +15,7 @@ ENV ARCH x64
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
-  apt-get install apt-utils -y \
+  apt-get install apt-utils -y && \
   apt-get dist-upgrade -y && \
   apt-get install -y \
     ccache \
