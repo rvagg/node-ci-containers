@@ -13,7 +13,6 @@
 set -x
 set -e
 
-
 image_name=$(cat .ci.yml | shyaml get-value "${CONTAINER_TEST}.image")
 test_label=$(cat .ci.yml | shyaml get-value "${CONTAINER_TEST}.label" || echo $CONTAINER_TEST)
 execute_cmds=$(cat .ci.yml | shyaml get-value ${CONTAINER_TEST}.execute)
@@ -28,6 +27,20 @@ fi
 ccache_dir=/home/iojs/.ccache/${image_name}
 echo "Using ccache directory: ${ccache_dir}"
 mkdir -p $ccache_dir
+
+if [ -n "${CONTAINER_TEST}" ]; then
+  echo "STATUS_LABEL=linux-containered-${CONTAINER_TEST}" > env.properties
+  echo "CCACHE_TEMPDIR=/home/iojs/.ccache/${CONTAINER_TEST}_${BUILD_NUMBER}" >> env.properties
+else
+  echo "STATUS_LABEL=linux-containered" > env.properties
+fi
+
+FLAKY_TESTS_MODE=run
+if test $IGNORE_FLAKY_TESTS = "true"; then
+  FLAKY_TESTS_MODE=dontcare
+fi
+
+echo "FLAKY_TESTS_MODE=${FLAKY_TESTS_MODE}" >> env.properties
 
 # env.properties has some variables we want to make available in the build
 execute_cmds=". ./env.properties; ${execute_cmds}"
