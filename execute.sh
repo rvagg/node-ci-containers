@@ -4,7 +4,7 @@
 ##
 ## Should be executed in git clone of the nodejs/node repository. The command
 ## `shyaml` should be available (from python3-pip). The repository should have
-## a .ci.yml file and $CONTAINER_TESTS should be set to a named test section
+## a .ci.yml file and $CONTAINER_TEST should be set to a named test section
 ## in that YAML file. That section should contain an "image" property that will
 ## be appended to 'rvagg/node-ci-containers:' to find the Docker Hub image,
 ## and an "execute" property that contains the script to run to execute the
@@ -14,11 +14,11 @@ set -x
 set -e
 
 
-image_name=$(cat .ci.yml | shyaml get-value "${CONTAINER_TESTS}.image")
-test_label=$(cat .ci.yml | shyaml get-value "${CONTAINER_TESTS}.label" || echo $CONTAINER_TESTS)
-execute_cmds=$(cat .ci.yml | shyaml get-value ${CONTAINER_TESTS}.execute)
+image_name=$(cat .ci.yml | shyaml get-value "${CONTAINER_TEST}.image")
+test_label=$(cat .ci.yml | shyaml get-value "${CONTAINER_TEST}.label" || echo $CONTAINER_TEST)
+execute_cmds=$(cat .ci.yml | shyaml get-value ${CONTAINER_TEST}.execute)
 
-echo "Running ${test_label} (${CONTAINER_TESTS})..."
+echo "Running ${test_label} (${CONTAINER_TEST})..."
 
 if ! [[ "$image_name" =~ ^[a-zA-Z0-9/_-]+$ ]]; then
   echo "Bad image name: ${image_name}"
