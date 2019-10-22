@@ -30,7 +30,7 @@ RUN mkdir -p /tmp/zlib_1.2.11 && \
 
 VOLUME /home/iojs/.ccache /home/iojs/workspace
 
-ENV PATH=/usr/lib/ccache/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+ENV PATH=/usr/lib/ccache:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
   USER=iojs \
   JOBS=2 \
   SHELL=/bin/bash \
