@@ -23,7 +23,7 @@ VOLUME /home/iojs/.ccache /home/iojs/workspace
 
 ENV PATH=/usr/lib/ccache/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
   USER=iojs \
-  JOBS=4 \
+  JOBS=2 \
   SHELL=/bin/bash \
   HOME=/home/iojs \
   NODE_COMMON_PIPE=/home/iojs/test.pipe \
