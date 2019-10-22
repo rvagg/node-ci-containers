@@ -13,7 +13,8 @@ RUN apt-get update && \
     curl \
     python-pip \
     python3-pip \
-    libfontconfig1
+    libfontconfig1 \
+    ninja-build
 
 RUN pip install tap2junit && pip3 install tap2junit
 
