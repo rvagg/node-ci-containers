@@ -27,6 +27,10 @@ fi
 ccache_dir=/home/iojs/.ccache/${image_name}
 echo "Using ccache directory: ${ccache_dir}"
 mkdir -p "${ccache_dir}/${CONTAINER_TEST}_${BUILD_NUMBER}"
+if [ "$image_name" == "ubuntu1804" ]; then
+  # special case for most commonly used image
+  echo 'max_size = 15.0G' > ${ccache_dir}/ccache.conf
+fi
 
 echo "CCACHE_TEMPDIR=/home/iojs/.ccache/${CONTAINER_TEST}_${BUILD_NUMBER}" >> env.properties
 
