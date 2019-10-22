@@ -16,8 +16,6 @@ RUN apt-get update && \
     libfontconfig1 \
     ninja-build
 
-RUN pip install tap2junit && pip3 install tap2junit
-
 RUN addgroup --gid 1000 iojs && \
   adduser --gid 1000 --uid 1000 --disabled-password --home /home/iojs --shell /bin/bash --gecos iojs iojs
 

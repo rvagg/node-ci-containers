@@ -16,8 +16,6 @@ RUN dnf -y update && \
     python-pip \
     python3-pip
 
-RUN pip install tap2junit && pip3 install tap2junit
-
 RUN groupadd --gid 1000 iojs && \
   useradd --gid 1000 --uid 1000 --create-home --shell /bin/bash iojs
 

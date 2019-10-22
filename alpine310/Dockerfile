@@ -30,8 +30,6 @@ RUN apk add --no-cache --upgrade apk-tools && \
         libtool \
         autoconf
 
-RUN pip install tap2junit && pip3 install tap2junit
-
 RUN addgroup -g 1000 iojs && adduser -G iojs -D -u 1000 iojs
 
 VOLUME /home/iojs/.ccache /home/iojs/workspace
