@@ -6,6 +6,7 @@ RUN dnf -y update && \
     bzip2 \
     which \
     findutils \
+    procps \
     ccache \
     gcc-c++ \
     git \
