@@ -13,10 +13,12 @@
 set -x
 set -e
 
-echo "Running ${CONTAINER_TESTS} ..."
 
 image_name=$(cat .ci.yml | shyaml get-value "${CONTAINER_TESTS}.image")
+test_label=$(cat .ci.yml | shyaml get-value "${CONTAINER_TESTS}.label" || echo $CONTAINER_TESTS)
 execute_cmds=$(cat .ci.yml | shyaml get-value ${CONTAINER_TESTS}.execute)
+
+echo "Running ${test_label} (${CONTAINER_TESTS})..."
 
 if ! [[ "$image_name" =~ ^[a-zA-Z0-9/_-]+$ ]]; then
   echo "Bad image name: ${image_name}"
