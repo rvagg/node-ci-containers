@@ -26,15 +26,9 @@ fi
 
 ccache_dir=/home/iojs/.ccache/${image_name}
 echo "Using ccache directory: ${ccache_dir}"
-mkdir -p $ccache_dir
+mkdir -p "${ccache_dir}/${CONTAINER_TEST}_${BUILD_NUMBER}"
 
 echo "CCACHE_TEMPDIR=/home/iojs/.ccache/${CONTAINER_TEST}_${BUILD_NUMBER}" >> env.properties
-FLAKY_TESTS_MODE=run
-if test $IGNORE_FLAKY_TESTS = "true"; then
-  FLAKY_TESTS_MODE=dontcare
-fi
-
-echo "FLAKY_TESTS_MODE=${FLAKY_TESTS_MODE}" >> env.properties
 
 # env.properties has some variables we want to make available in the build
 execute_cmds=". ./env.properties; ${execute_cmds}"
