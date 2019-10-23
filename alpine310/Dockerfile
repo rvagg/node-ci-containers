@@ -32,6 +32,8 @@ RUN apk add --no-cache --upgrade apk-tools && \
 
 RUN addgroup -g 1000 iojs && adduser -G iojs -D -u 1000 iojs
 
+RUN mkdir /home/iojs/tmp
+
 VOLUME /home/iojs/.ccache /home/iojs/workspace
 
 ENV PATH=/usr/lib/ccache/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \

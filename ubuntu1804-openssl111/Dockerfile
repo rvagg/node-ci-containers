@@ -18,6 +18,8 @@ RUN apt-get update && \
 RUN addgroup --gid 1000 iojs && \
   adduser --gid 1000 --uid 1000 --disabled-password --home /home/iojs --shell /bin/bash --gecos iojs iojs
 
+RUN mkdir /home/iojs/tmp
+
 ENV OPENSSL111DIR /opt/openssl-1.1.1d
 
 RUN mkdir -p /tmp/openssl_1.1.1d && \
