@@ -13,6 +13,7 @@ Each container sets up a minimal build environment required to test a particular
 * [`rvagg/node-ci-containers:alpine310`](https://github.com/rvagg/node-ci-containers/blob/master/alpine310) - Alpine 3.10 with basic build tools
 * [`rvagg/node-ci-containers:centos7-devtoolset7`](https://github.com/rvagg/node-ci-containers/blob/master/centos7-devtoolset7) - CentOS 7 with Devtoolset-7 installed and configured
 * [`rvagg/node-ci-containers:centos8`](https://github.com/rvagg/node-ci-containers/blob/master/centos8) - CentOS 8 with basic build tools
+* [`rvagg/node-ci-containers:centos8-python2`](https://github.com/rvagg/node-ci-containers/blob/master/centos8-python2) - CentOS 8 with basic build tools and both Python 2 and 3
 * [`rvagg/node-ci-containers:debian9`](https://github.com/rvagg/node-ci-containers/blob/master/debian9) - Debian 9 (Stretch) with basic build tools
 * [`rvagg/node-ci-containers:fedora30`](https://github.com/rvagg/node-ci-containers/blob/master/fedora30) - Fedora 30 with basic build tools
 * [`rvagg/node-ci-containers:ubuntu1404-gcc49`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1404-gcc-49) - Ubuntu 14.04 (Trusty) LTS with basic build tools and GCC 4.9 from the Ubuntu toolchain test PPA linked as the default
