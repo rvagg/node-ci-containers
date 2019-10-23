@@ -14,9 +14,12 @@ Each container sets up a minimal build environment required to test a particular
 * [`rvagg/node-ci-containers:centos7-devtoolset7`](https://github.com/rvagg/node-ci-containers/blob/master/centos7-devtoolset7) - CentOS 7 with Devtoolset-7 installed and configured
 * [`rvagg/node-ci-containers:debian9`](https://github.com/rvagg/node-ci-containers/blob/master/debian9) - Debian 9 (Stretch) with basic build tools
 * [`rvagg/node-ci-containers:fedora30`](https://github.com/rvagg/node-ci-containers/blob/master/fedora30) - Fedora 30 with basic build tools
+* [`rvagg/node-ci-containers:ubuntu1404-gcc49`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1404-gcc-49) - Ubuntu 14.04 (Trusty) LTS with basic build tools and GCC 4.9 from the Ubuntu toolchain test PPA linked as the default
+* [`rvagg/node-ci-containers:ubuntu1604`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1604) - Ubuntu 16.04 (Xenial) LTS with basic build tools
+* [`rvagg/node-ci-containers:ubuntu1604-gcc6`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1604-gcc6) - Ubuntu 16.04 (Xenial) LTS with basic build tools and GCC 6 from the Ubuntu toolchain test PPA linked as the default
 * [`rvagg/node-ci-containers:ubuntu1804`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1804) - Ubuntu 18.04 (Bionic) LTS with basic buils tools and some extras, intended to be the generic workhorse where a test doesn't require a particular distribution or additional tools
-* [`rvagg/node-ci-containers:ubuntu1804_openssl111`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1804_openssl111) - Ubuntu 18.04 (Bionic) with basic build tools and OpenSSL 1.1.1 compiled and ready for shared-library linking in `$OPENSSL111DIR`.
-* [`rvagg/node-ci-containers:ubuntu1804_zlib`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1804_zlib) - Ubuntu 18.04 (Bionic) with basic build tools and zlib 1.2 compiled and ready for shared-library linking in `$ZLIB12DIR`.
+* [`rvagg/node-ci-containers:ubuntu1804-openssl111`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1804-openssl111) - Ubuntu 18.04 (Bionic) with basic build tools and OpenSSL 1.1.1 compiled and ready for shared-library linking in `$OPENSSL111DIR`.
+* [`rvagg/node-ci-containers:ubuntu1804-zlib`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1804-zlib) - Ubuntu 18.04 (Bionic) with basic build tools and zlib 1.2 compiled and ready for shared-library linking in `$ZLIB12DIR`.
 * [`rvagg/node-ci-containers:ubuntu1910`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1910) - Ubuntu 19.10 with basic build tools
 
 ## Adding more
