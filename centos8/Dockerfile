@@ -16,7 +16,7 @@ RUN yum upgrade -y && \
 RUN groupadd --gid 1000 iojs && \
   useradd --gid 1000 --uid 1000 --create-home --shell /bin/bash iojs
 
-RUN mkdir /home/iojs/tmp
+RUN su iojs -c 'mkdir /home/iojs/tmp'
 
 VOLUME /home/iojs/.ccache /home/iojs/workspace
 

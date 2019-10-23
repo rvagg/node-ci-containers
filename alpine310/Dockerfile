@@ -32,7 +32,7 @@ RUN apk add --no-cache --upgrade apk-tools && \
 
 RUN addgroup -g 1000 iojs && adduser -G iojs -D -u 1000 iojs
 
-RUN mkdir /home/iojs/tmp
+RUN su iojs -c 'mkdir /home/iojs/tmp'
 
 VOLUME /home/iojs/.ccache /home/iojs/workspace
 

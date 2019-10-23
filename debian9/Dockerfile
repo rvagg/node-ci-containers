@@ -18,7 +18,7 @@ RUN apt-get update && \
 RUN addgroup --gid 1000 iojs && \
   adduser --gid 1000 --uid 1000 --disabled-password --home /home/iojs --shell /bin/bash --gecos iojs iojs
 
-RUN mkdir /home/iojs/tmp
+RUN su iojs -c 'mkdir /home/iojs/tmp'
 
 VOLUME /home/iojs/.ccache /home/iojs/workspace
 
