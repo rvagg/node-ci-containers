@@ -32,7 +32,9 @@ if [ "$image_name" == "ubuntu1804" ]; then
   echo 'max_size = 15.0G' > ${ccache_dir}/ccache.conf
 fi
 
-echo "CCACHE_TEMPDIR=/home/iojs/.ccache/${linux_x64_container_suite}_${BUILD_NUMBER}" >> env.properties
+ccache_tempdir="/home/iojs/.ccache/${linux_x64_container_suite}_${BUILD_NUMBER}"
+echo "CCACHE_TEMPDIR='${ccache_tempdir}'" >> env.properties
+mkdir -p "${ccache_tempdir}"
 
 # env.properties has some variables we want to make available in the build
 execute_cmds=". ./env.properties; ${execute_cmds}"
