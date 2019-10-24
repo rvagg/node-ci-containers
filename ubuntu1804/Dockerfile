@@ -18,8 +18,8 @@ RUN apt-get update && \
 
 # Installing ccache doesn't do this for us on Ubuntu but these are
 # the defaults that `ninja` uses so it bypasses ccache without these
-RUN ln -sf /usr/lib/ccache/cc /usr/bin/ccache && \
-  ln -sf /usr/lib/ccache/c++ /usr/bin/ccache
+RUN ln -sf /usr/bin/ccache /usr/lib/ccache/cc && \
+  ln -sf /usr/bin/ccache /usr/lib/ccache/c++
 
 RUN addgroup --gid 1000 iojs && \
   adduser --gid 1000 --uid 1000 --disabled-password --home /home/iojs --shell /bin/bash --gecos iojs iojs
