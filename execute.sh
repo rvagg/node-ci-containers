@@ -26,7 +26,7 @@ fi
 
 ccache_dir="/home/iojs/.ccache/${image_name}"
 ccache_tempdir_name="${linux_x64_container_suite}_${BUILD_NUMBER}"
-ccache_tempdir_host="${image_name}/${ccache_tempdir_name}"
+ccache_tempdir_host="${ccache_dir}/${ccache_tempdir_name}"
 ccache_tempdir_container="/home/iojs/.ccache/${ccache_tempdir_name}"
 echo "Using ccache directory: ${ccache_dir}"
 mkdir -p "${ccache_tempdir_host}"
