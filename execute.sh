@@ -24,20 +24,18 @@ if ! [[ "$image_name" =~ ^[a-zA-Z0-9/_-]+$ ]]; then
   exit 1
 fi
 
-ccache_dir=/home/iojs/.ccache/${image_name}
+ccache_dir="/home/iojs/.ccache/${image_name}"
+ccache_tempdir="/home/iojs/.ccache/${linux_x64_container_suite}_${BUILD_NUMBER}"
 echo "Using ccache directory: ${ccache_dir}"
-mkdir -p "${ccache_dir}/${linux_x64_container_suite}_${BUILD_NUMBER}"
+mkdir -p "${ccache_tmpdir}"
 if [ "$image_name" == "ubuntu1804" ]; then
   # special case for most commonly used image
-  echo 'max_size = 15.0G' > ${ccache_dir}/ccache.conf
+  echo 'max_size = 15.0G' > "${ccache_dir}/ccache.conf"
 fi
-
-ccache_tempdir="/home/iojs/.ccache/${linux_x64_container_suite}_${BUILD_NUMBER}"
-echo "CCACHE_TEMPDIR='${ccache_tempdir}'" >> env.properties
-mkdir -p "${ccache_tempdir}"
+echo "CCACHE_TEMPDIR=\"${ccache_tempdir}\"" >> env.properties
 
 # env.properties has some variables we want to make available in the build
-execute_cmds=". ./env.properties; ${execute_cmds}"
+execute_cmds="cat env.properties; . ./env.properties; ${execute_cmds}"
 echo "${execute_cmds}" > node-ci-exec.sh
 
 sudo /usr/local/bin/docker-node-exec.sh -i $image_name
