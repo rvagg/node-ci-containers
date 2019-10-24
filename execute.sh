@@ -40,4 +40,10 @@ echo "CCACHE_TEMPDIR=\"${ccache_tempdir_container}\"" >> env.properties
 execute_cmds="cat env.properties; . ./env.properties; ${execute_cmds}"
 echo "${execute_cmds}" > node-ci-exec.sh
 
+# execute
+
 sudo /usr/local/bin/docker-node-exec.sh -i $image_name
+
+# cleanup
+
+rm -rf "$ccache_tempdir_host"
