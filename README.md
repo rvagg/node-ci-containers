@@ -25,6 +25,7 @@ Each container sets up a minimal build environment required to test a particular
 * [`rvagg/node-ci-containers:ubuntu1804-openssl111`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1804-openssl111) - Ubuntu 18.04 (Bionic) with basic build tools and OpenSSL 1.1.1 compiled and ready for shared-library linking in `$OPENSSL111DIR`.
 * [`rvagg/node-ci-containers:ubuntu1804-zlib`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1804-zlib) - Ubuntu 18.04 (Bionic) with basic build tools and zlib 1.2 compiled and ready for shared-library linking in `$ZLIB12DIR`.
 * [`rvagg/node-ci-containers:ubuntu1910`](https://github.com/rvagg/node-ci-containers/blob/master/ubuntu1910) - Ubuntu 19.10 with basic build tools
+* [`rvagg/node-ci-containers:node-linter`](https://github.com/rvagg/node-ci-containers/blob/master/node-linter) - A special-purpose image that can run the various linters against the Node.js codebase when mounted in /home/iojs/workspace.
 
 ## Adding more
 
