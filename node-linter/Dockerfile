@@ -12,18 +12,22 @@ RUN apt-get update && \
 
 COPY lint-node.sh /usr/local/bin/lint-node.sh
 
-RUN mkdir -p /home/iojs/workspace && chown node.node -R /home/iojs/
+# node images comes with user 'node' with uid/gid 1000, we need that to be 'iojs'
+RUN usermod -l iojs node && \
+  groupmod node -n iojs && \
+  mkdir -p /home/iojs/workspace && \
+  chown iojs:iojs -R /home/iojs/
 
 VOLUME /home/iojs/workspace
 
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
-  USER=node \
+  USER=iojs \
   JOBS=2 \
   SHELL=/bin/bash \
   HOME=/home/iojs
 
 WORKDIR /home/iojs/workspace
 
-USER node:node
+USER iojs:iojs
 
 CMD /usr/local/bin/lint-node.sh
