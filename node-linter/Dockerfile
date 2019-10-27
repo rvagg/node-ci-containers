@@ -10,6 +10,9 @@ RUN apt-get update && \
     python-pip \
     python3-pip
 
+RUN pip install --upgrade pip && \
+  pip3 install --upgrade pip
+
 COPY lint-node.sh /usr/local/bin/lint-node.sh
 
 # node images comes with user 'node' with uid/gid 1000, we need that to be 'iojs'
